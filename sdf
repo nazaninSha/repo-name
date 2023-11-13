@@ -1,0 +1,1 @@
+dotnet aspnet-codegenerator controller -name PeopleController -m test.Models.Person -dc Nazanin.Models.RoiDatabaseContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -api

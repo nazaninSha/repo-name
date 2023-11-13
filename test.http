@@ -1,0 +1,57 @@
+@hostname = localhost
+@port = 5284
+@host = {{hostname}}:{{port}}
+
+@name = People
+
+###
+
+GET http://localhost:5219/api/People HTTP/1.1
+
+###
+
+GET http://{{host}}/api/People HTTP/1.1
+
+###
+
+GET http://{{host}}/api/Departments HTTP/1.1
+
+###
+
+get http://{{host}}/api/People/5 HTTP/1.1
+
+###
+
+PUT http://{{host}}/api/People/5 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "John Smith",
+  "phone": "01 2345 6789",
+  "departmentId": 4,
+  "street": "1 Code Lane",
+  "city": "Javaville",
+  "state": "NSW",
+  "zip": "0100",
+  "country": "Australia",
+  "department": null
+}
+
+###
+
+post http://{{host}}/api/People HTTP/1.1N
+Content-Type: application/json
+
+{
+  "name": "John Smith",
+  "phone": "01 2345 6789",
+  "city": "Javaville",
+  "state": "NSW",
+  "zip": "0100",
+  "country": "Australia",
+  "department": null
+}
+
+###
+
+DELETE http://{{host}}/api/People/7 HTTP/1.1
