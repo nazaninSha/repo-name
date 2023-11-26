@@ -45,7 +45,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-// Add between app.UseHttpsRedirection();  and app.UseAuthorization();
 
 // Enable CORS (default policy)
 app.UseCors();
