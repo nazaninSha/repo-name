@@ -28,7 +28,8 @@ namespace repo_name.Controllers
           {
               return NotFound();
           }
-            return await _context.People.ToListAsync();
+          return await _context.People.Include("Department").ToListAsync();
+            //return await _context.People.ToListAsync();
         }
 
         // GET: api/People/5
@@ -39,7 +40,8 @@ namespace repo_name.Controllers
           {
               return NotFound();
           }
-            var person = await _context.People.FindAsync(id);
+            //var person = await _context.People.FindAsync(id);
+            var person = await _context.People.Include(p => p.Department).FirstOrDefaultAsync(p => p.Id == id);
 
             if (person == null)
             {
